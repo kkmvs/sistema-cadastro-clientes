@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://fontawesome.com" crossorigin="anonymous"></script>
+    <title>Galeria de Cortes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: radial-gradient(circle, #2c2c2c 0%, #000000 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: brown;
+            width: 280px;
+            padding-bottom: 25px;
+            border-radius: 15px;
+            color: #fff;
+            text-align: center;
+            /* Sombra ajustada para aparecer melhor no fundo preto */
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1); 
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(165, 42, 42, 0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .btn-card {
+            font-size: 15px;
+            padding: 10px 25px;
+            border: 1px solid white;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-card:hover {
+            background-color: white;
+            color: brown;
+        }
+
+        /* Botão Voltar Home ajustado para fundo preto */
+        .btn-home {
+            font-size: 16px;
+            padding: 12px 30px;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-home:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* FOOTER IDÊNTICO AO DE CONTATO */
+        footer {
+            width: 100%;
+            padding: 15px 0;
+            background-color: #0a0a0a;
+            border-top: 1px solid brown;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer strong {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <div class="main">
+            <div class="card">
+                <img src="FOTOum.jpg" alt="Corte Social">
+                <h2>Corte 1</h2>
+                <p>Social</p>
+                <a class="btn-card" href="agend.html">Agendar</a>
+            </div>
+
+            <div class="card">
+                <img src="FOTOdois.jpg" alt="Corte Americano">
+                <h2>Corte 2</h2>
+                <p>Americano</p>
+                <a class="btn-card" href="agend.html">Agendar</a>
+            </div>
+
+            <div class="card">
+                <img src="FOTOtres.jfif" alt="Barba">
+                <h2>Corte 3</h2>
+                <p>Barba</p>
+                <a class="btn-card" href="agend.html">Agendar</a>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a class="btn-home" href="index.html">Voltar Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 | Todos os direitos reservados | Desenvolvido por <strong>Erick</strong></p>
+    </footer>
+
+</body>
+</html>

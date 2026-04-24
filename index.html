@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/509881f76d.js" crossorigin="anonymous"></script>
+    <title>Barbearia do Erick</title>
+    <link rel="icon" type="image/png" href="Copiaquatro.png">
+    <style>
+        /* 1. RESET E ESTRUTURA BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle, #2c2c2c 0%, #000000 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que o corpo ocupe a tela toda */
+        }
+
+        /* 2. CONTEÚDO PRINCIPAL (CENTRALIZADO) */
+        main {
+            flex: 1; /* Empurra o footer para o final */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* Área de Login no topo direito */
+        .login-container {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .login-container i {
+            font-size: 50px;
+            color: rgb(190, 39, 35);
+            margin-bottom: 5px;
+        }
+
+        .btn-login {
+            text-decoration: none;
+            color: rgb(190, 39, 35);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-login:hover {
+            text-decoration: underline;
+        }
+
+        /* Logo */
+        .logo-container img {
+            width: 250px; /* Ajuste o tamanho da sua logo aqui */
+            height: auto;
+            margin-bottom: 50px;
+        }
+
+        /* 3. BOTÕES SIMÉTRICOS */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas iguais */
+            gap: 20px;
+            max-width: 400px; /* Controla a largura total do bloco de botões */
+        }
+
+        .btn-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            background-color: brown;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            border-radius: 10px;
+            
+            /* Tamanhos idênticos para simetria */
+            width: 180px; 
+            height: 70px;
+            font-size: 16px;
+            font-weight: 500;
+            
+            transition: all 0.3s ease;
+        }
+
+        .btn-menu:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            filter: brightness(1.2);
+        }
+
+        /* 4. FOOTER (RODAPÉ) */
+        footer {
+            background-color: #0a0a0a;
+            border-top: 1px solid brown;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #777;
+        }
+
+        footer strong {
+            color: brown;
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 450px) {
+            .button-grid {
+                grid-template-columns: 1fr; /* 1 coluna só em telas pequenas */
+            }
+            .login-container {
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <!-- Login -->
+        <div class="login-container">
+            <i class="fa-solid fa-circle-user"></i>
+            <a href="login.html" class="btn-login">Login</a>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo-container">
+            <!-- Substitua pelo caminho correto da sua imagem -->
+            <img src="Logotipo-removebg-preview.png" alt="Logo Barbearia">
+        </div>
+
+        <!-- Menu de Botões Simétricos -->
+        <div class="button-grid">
+            <a href="tab.html" class="btn-menu">Tabela</a>
+            <a href="agend.html" class="btn-menu">Agendamentos</a>
+            <a href="gal.html" class="btn-menu">Galeria</a>
+            <a href="cont.html" class="btn-menu">Contato</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a class="footer-link" target="_blank" href="https://www.google.com/maps/@-8.1936812,-34.9324704,3a,75y,281.06h,68.58t/data=!3m7!1e1!3m5!1sYQV0gqqY3D2ZqNoZlyAPFw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D21.424837657458625%26panoid%3DYQV0gqqY3D2ZqNoZlyAPFw%26yaw%3D281.0613024650259!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D">
+                <i class="fa-solid fa-globe" style="color: rgb(190, 39, 35);"></i>
+                Rua da barbearia
+            </a>
+            <p>&copy; 2026 | Todos os direitos reservados | Desenvolvido por <strong>Erick</strong></p>
+        </div>
+    </footer>
+    <script src="https://jsdelivr.net"></script>
+    <script src="script.js"></script>
+</body>
+</html>

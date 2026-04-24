@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento | Barbearia</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(circle, #2c2c2c 0%, #000000 100%);
+            color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: brown;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgb(255, 255, 255); /* Borda dourada sutil */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: rgb(0, 0, 0);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+        }
+
+        /* Campos de texto e data */
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        input[type="text"], 
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background: #252525;
+            color: #fff;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #faefef;
+        }
+
+        /* Opções de Checkbox */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .checkbox-card {
+            display: flex;
+            align-items: center;
+            background: #1a1616;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .checkbox-card:hover {
+            background: #333;
+        }
+
+        .checkbox-card input {
+            margin-right: 15px;
+            accent-color: #ff0000;
+            transform: scale(1.2);
+        }
+
+        /* Botões */
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+        }
+
+        .btn-confirm {
+            background: #fffefd;
+            color: #000;
+        }
+
+        .btn-confirm:hover {
+            background: #f00505;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgb(255, 255, 255);
+        }
+
+        .btn-back {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #000000;
+        }
+
+        .btn-back:hover {
+            background: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <h1>Agendar Horário</h1>
+        
+        <form>
+            <div class="input-group">
+                <input type="text" placeholder="Seu Nome completo" required>
+                <input type="date" required>
+            </div>
+
+            <div class="services-grid">
+                <label class="checkbox-card">
+                    <input type="checkbox" name="servico" value="Tesoura">
+                    <span>Corte na Tesoura</span>
+                </label>
+
+                <label class="checkbox-card">
+                    <input type="checkbox" name="servico" value="Maquina">
+                    <span>Corte na Máquina</span>
+                </label>
+
+                <label class="checkbox-card">
+                    <input type="checkbox" name="servico" value="Barba">
+                    <span>Barba Completa</span>
+                </label>
+            </div>
+
+            <div class="actions">
+                <a href="index.html" class="btn btn-back">Voltar</a>
+                <button type="submit" class="btn btn-confirm">Confirmar</button>
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>

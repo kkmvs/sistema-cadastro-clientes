@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <title>Tabela</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column; /* Faz os elementos empilharem verticalmente */
+            min-height: 100vh; /* Garante que o corpo tenha no mínimo a altura da tela */
+            background: radial-gradient(circle, #2c2c2c 0%, #000000 100%);
+            color: white;
+            font-family: sans-serif;
+        }
+
+        /* Container principal que cresce para empurrar o footer */
+        .content {
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Espaço entre a grade e os botões */
+            padding: 20px;
+        }
+
+        .grade {
+            width: 340px;
+            background-color: brown;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+    .grade h1 {
+        margin-top: 0;
+        margin-left: 100px;
+        color: #ffffff; /* Removido para não desalinhado */
+    }
+
+    .grade p {
+        line-height: 1.6;
+        margin: 10px 0;
+        margin-left: 90px; /* Removido para não desalinhado */
+        color: #ffffff;
+    }
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-7, .btn-8 {
+            border: 1px solid rgb(255, 255, 255);
+            font-size: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            background-color: brown;
+            color: #fff;
+            padding: 12px;
+            width: 150px;
+            text-align: center;
+            height: 50px;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .btn-7:hover, .btn-8:hover {
+            box-shadow: 0 10px 10px -5px rgba(255, 246, 246, 0.938);
+            transform: translateY(-5px)
+        }
+
+        footer {
+            width: 100%;
+            padding: 15px 0;
+            background-color: #0a0a0a;
+            border-top: 1px solid brown;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer strong { color: brown; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <main class="grade">
+            <h1>Preço</h1>
+            <p>Máquina---R$20</p>
+            <p>Tesoura----R$25</p>
+            <p>Barba------R$30</p>
+        </main>
+
+        <div class="btn-group">
+            <a class="btn-7" href="index.html">Voltar Home</a>
+            <a class="btn-8" href="agend.html">Agendar</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 | Todos os direitos reservados | Desenvolvido por <strong>Erick</strong></p>
+    </footer>
+</body>
+</html>

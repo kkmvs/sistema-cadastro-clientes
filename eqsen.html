@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #2c2c2c 0%, #000000 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff; /* Branco */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #d32f2f; /* Vermelho */
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666; /* Cinza */
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc; /* Cinza */
+            border-radius: 4px;
+            box-sizing: border-box;
+            outline-color: #d32f2f;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #d32f2f; /* Vermelho */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #b71c1c; /* Vermelho escuro */
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #d32f2f;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Esqueci a Senha</h2>
+        <p>Insira o seu e-mail cadastrado e enviaremos as instruções para você criar uma nova senha.</p>
+        
+        <form>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+            
+            <button type="submit">Enviar Link de Redefinição</button>
+        </form>
+
+        <div class="footer">
+            <p>Lembrou a senha? <a href="login.html">Voltar para o Login</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
