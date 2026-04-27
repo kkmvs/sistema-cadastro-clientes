@@ -116,23 +116,33 @@
         </div>
     </div>
 <script>
-const _supabaseUrl = 'https://cagohgxsuhsnkacwxevh.supabase.co';
-const _supabaseAnonKey = 'sb_publishable_CLajXLhrnani32ybIoae7w_PLrNFQ8J';
-const supabaseClient = supabase.createClient(_supabaseUrl, _supabaseAnonKey);
+ // Configurações do seu projeto
+        const _supabaseUrl = 'https://cagohgxsuhsnkacwxevh.supabase.co';
+        const _supabaseAnonKey = 'sb_publishable_CLajXLhrnani32ybIoae7w_PLrNFQ8J';
+        const supabaseClient = supabase.createClient(_supabaseUrl, _supabaseAnonKey);
 
-async function getDados() {
-  const { data, error } = await supabaseClient
-    .from('sua_tabela') 
-    .select('*');
+        const registerForm = document.getElementById('registerForm');
 
-  if (error) {
-    console.error('Erro:', error.message);
-  } else {
-    console.log('Dados:', data);
-  }
-}
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-getDados();
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+
+            // Função de cadastro do Supabase Auth
+            const { data, error } = await supabaseClient.auth.signUp({
+                email: email,
+                password: password,
+            });
+
+            if (error) {
+                alert('Erro ao registrar: ' + error.message);
+            } else {
+                // O Supabase, por padrão, envia um e-mail de confirmação
+                alert('Cadastro realizado! Verifique sua caixa de entrada para confirmar o e-mail.');
+                console.log('Usuário criado:', data);
+            }
+        });
     </script>
 </body>
 </html>

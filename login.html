@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://jsdelivr.net"></script>
     <title>Login</title>
     <style>
         * {
@@ -173,19 +174,29 @@ const _supabaseUrl = 'https://cagohgxsuhsnkacwxevh.supabase.co';
 const _supabaseAnonKey = 'sb_publishable_CLajXLhrnani32ybIoae7w_PLrNFQ8J';
 const supabaseClient = supabase.createClient(_supabaseUrl, _supabaseAnonKey);
 
-async function getDados() {
-  const { data, error } = await supabaseClient
-    .from('sua_tabela') 
-    .select('*');
+// Seleciona o formulário
+const loginForm = document.querySelector('form');
 
-  if (error) {
-    console.error('Erro:', error.message);
-  } else {
-    console.log('Dados:', data);
-  }
-}
+loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Impede a página de recarregar
 
-getDados();
+    // Pega os valores dos inputs
+    const email = loginForm.querySelector('input[type="email"]').value;
+    const password = loginForm.querySelector('input[type="password"]').value;
+
+    // Tenta fazer o login no Supabase Auth
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password,
+    });
+
+    if (error) {
+        alert('Erro ao fazer login: ' + error.message);
+    } else {
+        alert('Login realizado com sucesso!');
+        window.location.href = 'dashboard.html'; // Redireciona após o sucesso
+    }
+});
     </script>
 </body>
 </html>
