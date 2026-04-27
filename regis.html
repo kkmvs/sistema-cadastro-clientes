@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://jsdelivr.net"></script>
     <title>Página de Registro</title>
     <style>
         body {
@@ -94,55 +95,58 @@
 </head>
 <body>
 
-    <div class="register-container">
-        <h2>Criar Conta</h2>
-        <form>
-            <div class="input-group">
-                <label for="username">Usuário</label>
-                <input type="text" id="username" placeholder="Digite seu usuário" required>
-            </div>
-            <div class="input-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="seu@email.com" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" placeholder="********" required>
-            </div>
-            <button type="submit" class="btn-register">Registrar</button>
-        </form>
-        <div class="footer-text">
-            Já tem uma conta? <a href="login.html">Faça login</a>
-        </div>
+    <!-- No seu Form, adicione o ID 'registerForm' e certifique-se de que os IDs dos inputs batam com o JS -->
+<form id="registerForm">
+    <div class="input-group">
+        <label for="username">Usuário</label>
+        <input type="text" id="username" placeholder="Digite seu usuário" required>
     </div>
+    <div class="input-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seu@email.com" required>
+    </div>
+    <div class="input-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" placeholder="********" required>
+    </div>
+    <button type="submit" class="btn-register">Registrar</button>
+</form>
+
 <script>
- // Configurações do seu projeto
-        const _supabaseUrl = 'https://cagohgxsuhsnkacwxevh.supabase.co';
-        const _supabaseAnonKey = 'sb_publishable_CLajXLhrnani32ybIoae7w_PLrNFQ8J';
-        const supabaseClient = supabase.createClient(_supabaseUrl, _supabaseAnonKey);
+    // Inicialização correta (use 'supabase' em vez de 'supabaseClient' se preferir)
+    const _supabaseUrl = 'https://cagohgxsuhsnkacwxevh.supabase.co';
+    const _supabaseAnonKey = 'sb_publishable_CLajXLhrnani32ybIoae7w_PLrNFQ8J';
+    const supabaseClient = supabase.createClient(_supabaseUrl, _supabaseAnonKey);
 
-        const registerForm = document.getElementById('registerForm');
+    const registerForm = document.getElementById('registerForm');
 
-        registerForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-            const email = document.getElementById('regEmail').value;
-            const password = document.getElementById('regPassword').value;
+        // Pegando os IDs corretos que estão no HTML
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
 
-            // Função de cadastro do Supabase Auth
-            const { data, error } = await supabaseClient.auth.signUp({
-                email: email,
-                password: password,
-            });
-
-            if (error) {
-                alert('Erro ao registrar: ' + error.message);
-            } else {
-                // O Supabase, por padrão, envia um e-mail de confirmação
-                alert('Cadastro realizado! Verifique sua caixa de entrada para confirmar o e-mail.');
-                console.log('Usuário criado:', data);
+        const { data, error } = await supabaseClient.auth.signUp({
+            email: email,
+            password: password,
+            options: {
+                data: {
+                    display_name: username, // Salva o nome de usuário nos metadados
+                }
             }
         });
-    </script>
+
+        if (error) {
+            alert('Erro ao registrar: ' + error.message);
+        } else {
+            alert('Cadastro realizado! Verifique seu e-mail.');
+            console.log('Usuário criado:', data);
+        }
+    });
+</script>
+
+
 </body>
 </html>
