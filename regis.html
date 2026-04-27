@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://jsdelivr.net"></script>
     <title>Página de Registro</title>
     <style>
         body {
@@ -116,40 +115,5 @@
             Já tem uma conta? <a href="login.html">Faça login</a>
         </div>
     </div>
-<script>
-    const _supabaseUrl = 'https://cagohgxsuhsnkacwxevh.supabase.co';
-    const _supabaseAnonKey = 'sb_publishable_CLajXLhrnani32ybIoae7w_PLrNFQ8J';
-    const supabaseClient = supabase.createClient(_supabaseUrl, _supabaseAnonKey);
-
-    const registerForm = document.getElementById('registerForm');
-
-    registerForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Pegando os valores corretos pelos IDs do HTML
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const username = document.getElementById('username').value;
-
-        // Cadastro no Supabase Auth
-        const { data, error } = await supabaseClient.auth.signUp({
-            email: email,
-            password: password,
-            options: {
-                data: {
-                    display_name: username, // Salva o nome de usuário nos metadados
-                }
-            }
-        });
-
-        if (error) {
-            alert('Erro ao registrar: ' + error.message);
-        } else {
-            alert('Cadastro realizado! Verifique seu e-mail para confirmar a conta.');
-            console.log('Usuário criado:', data);
-    </script>
-
-
-
 </body>
 </html>

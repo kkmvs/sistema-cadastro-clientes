@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://jsdelivr.net"></script>
     <title>Login</title>
     <style>
         * {
@@ -169,35 +168,6 @@
             </div>
         </form>
     </main>
-    <script>
-const _supabaseUrl = 'https://cagohgxsuhsnkacwxevh.supabase.co';
-const _supabaseAnonKey = 'sb_publishable_CLajXLhrnani32ybIoae7w_PLrNFQ8J';
-const supabaseClient = supabase.createClient(_supabaseUrl, _supabaseAnonKey);
-
-// Seleciona o formulário
-const loginForm = document.querySelector('form');
-
-loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Impede a página de recarregar
-
-    // Pega os valores dos inputs
-    const email = loginForm.querySelector('input[type="email"]').value;
-    const password = loginForm.querySelector('input[type="password"]').value;
-
-    // Tenta fazer o login no Supabase Auth
-    const { data, error } = await supabaseClient.auth.signInWithPassword({
-        email: email,
-        password: password,
-    });
-
-    if (error) {
-        alert('Erro ao fazer login: ' + error.message);
-    } else {
-        alert('Login realizado com sucesso!');
-        window.location.href = 'dashboard.html'; // Redireciona após o sucesso
-    }
-});
-    </script>
 </body>
 </html>
    
