@@ -33,6 +33,18 @@
             box-shadow: 0 10px 10px -5px rgba(255, 246, 246, 0.938);
             transform: translateY(-5px)
         }
+        /* Força a rolagem em dispositivos móveis */
+html, body {
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: auto !important;
+}
+
+/* Garante que o container do agendamento não trave */
+iframe, .simplybook-widget-container {
+    height: 100% !important;
+    min-height: 500px;
+}
 
     </style>
     <script src="//widget.simplybook.me/v2/widget/widget.js" type="text/javascript"></script>
