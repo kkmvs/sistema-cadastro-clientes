@@ -15,6 +15,29 @@
             color: white;
             overflow: hidden; /* Evita barras de rolagem desnecessárias */
         }
+        @media (max-width: 450px) {
+            .button-grid {
+                grid-template-columns: 1fr; /* 1 coluna só em telas pequenas */
+            }
+            .login-container {
+                right: 20px;
+            }
+        }
+        .btn-15 {
+             font-size: 16px;
+            padding: 12px 30px;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-15:hover {
+            box-shadow: 0 10px 10px -5px rgba(255, 246, 246, 0.938);
+            transform: translateY(-5px)
+        }
+
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +47,7 @@
         <script type="text/javascript">
     var widget = new SimplybookWidget({"widget_type":"iframe","url":"https:\/\/covil.simplybook.me","theme":"default","theme_settings":{"timeline_hide_unavailable":"1","hide_past_days":"0","timeline_show_end_time":"0","timeline_modern_display":"as_slots","sb_base_color":"#216849","display_item_mode":"block","booking_nav_bg_color":"#216849","body_bg_color":"#f7f7f7","sb_review_image":"","dark_font_color":"#333333","light_font_color":"#ffffff","btn_color_1":"#6b9080","sb_company_label_color":"#ffffff","hide_img_mode":"1","show_sidebar":"1","sb_busy":"#c7b3b3","sb_available":"#d6ebff"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"clear_session":0,"allow_switch_to_ada":0,"predefined":[]}});
 </script>
+ <a class="btn-15" href="index.html">Voltar Home</a>
 
 </body>
 </html>
